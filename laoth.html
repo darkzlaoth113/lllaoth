@@ -1,0 +1,86 @@
+<html>
+<head>
+    <title>Web Page</title>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        .button-animation {
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .button-animation:hover {
+            transform: scale(1.1) rotate(5deg);
+            background-color: #4a5c3a; /* Even darker green for hover effect */
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+        }
+        .logo-animation {
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        .diagonal-bg {
+            background: linear-gradient(135deg, #000000 50%, #4a5c3a 50%);
+        }
+    </style>
+</head>
+<body class="diagonal-bg text-white flex flex-col items-center justify-center min-h-screen relative">
+    <div id="root"></div>
+    <script type="text/babel">
+        const App = () => {
+            return (
+                <div className="text-center">
+                    <div className="absolute top-4 right-4">
+                        <p className="text-4xl font-great-vibes">LAOTH</p>
+                    </div>
+                    <div className="flex justify-center mb-8">
+                        <div className="logo-animation">
+                            <img src="https://media.tenor.com/7ynNPpnsQ8MAAAAi/duck-dancing.gif" alt="Dancing duck gif" className="w-24 h-24"/>
+                        </div>
+                    </div>
+                    <div className="flex space-x-2 mb-8">
+                        <button 
+                            className="px-2 py-1 md:px-4 md:py-2 border border-white rounded-full button-animation"
+                            onClick={() => window.location.href='https://www.instagram.com/onurthemetalist/'}
+                        >
+                            INSTAGRAM
+                        </button>
+                        <button 
+                            className="px-2 py-1 md:px-4 md:py-2 border border-white rounded-full button-animation"
+                            onClick={() => window.location.href='https://x.com/shalonelaoth'}
+                        >
+                            X
+                        </button>
+                        <button 
+                            className="px-2 py-1 md:px-4 md:py-2 border border-white rounded-full button-animation"
+                            onClick={() => window.location.href='https://www.youtube.com/@laoth808'}
+                        >
+                            YOUTUBE
+                        </button>
+                        <button 
+                            className="px-2 py-1 md:px-4 md:py-2 border border-white rounded-full button-animation"
+                            onClick={() => window.location.href='https://bento.me/laoth'}
+                        >
+                            BENTO
+                        </button>
+                    </div>
+                    <div className="flex flex-col items-center">
+                        <p className="text-2xl font-playfair-display">The LORD is my shepherd.</p>
+                        <p className="text-2xl font-playfair-display">I lack nothing.</p>
+                        <p className="text-xl font-playfair-display">Psalm 23:1-2</p>
+                    </div>
+                </div>
+            );
+        };
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
